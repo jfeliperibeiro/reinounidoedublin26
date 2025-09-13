@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Previsão de Gastos Interativa</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f9f9f9; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #0077cc; color: white; }
+    .total { font-weight: bold; background: #e0f7fa; }
+    .resumo { background-color: #d0ebff; font-weight: bold; }
+    input[type="number"] { width: 60px; }
+  </style>
+</head>
+<body>
+<nav style="background:#0077cc; padding:10px; text-align:center;">
+  <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
+  <a href="roteiro.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro</a>
+  <a href="checklist.html" style="color:white; margin:0 15px; text-decoration:none;">🧳 Checklist</a>
+  <a href="gastos.html" style="color:white; margin:0 15px; text-decoration:none;">💸 Gastos</a>
+  <a href="galeria.html" style="color:white; margin:0 15px; text-decoration:none;">📸 Galeria</a>
+  <a href="contador.html" style="color:white; margin:0 15px; text-decoration:none;">⏳ Contador</a>
+    <a href="novosgastos.html" style="color:white; margin:0 15px; text-decoration:none;">🗂️ Calculadora de Gastos</a>
+</nav>
+
+  <h1>💸 Previsão de Gastos Interativa – Reino Unido e Dublin</h1>
+
+  <table id="gastos">
+    <thead>
+      <tr>
+        <th>Cidade</th>
+        <th>Dias</th>
+        <th>Acomodação (£)</th>
+        <th>Refeições (£)</th>
+        <th>Transporte (£)</th>
+        <th>Passeios (£)</th>
+        <th>Total por Dia (£)</th>
+        <th>Total por Cidade (£)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>London</td><td><input type="number" value="7"></td>
+        <td><input type="number" value="45"></td>
+        <td><input type="number" value="20"></td>
+        <td><input type="number" value="5"></td>
+        <td><input type="number" value="25"></td>
+        <td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+      <tr>
+        <td>Brighton</td><td><input type="number" value="1"></td>
+        <td><input type="number" value="40"></td>
+        <td><input type="number" value="18"></td>
+        <td><input type="number" value="5"></td>
+        <td><input type="number" value="25"></td>
+        <td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+      <tr>
+<td>Eastbourne</td><td><input type="number" value="1"></td>
+<td><input type="number" value="38"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="6"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+</tr>
+<tr>
+<td>Portsmouth</td><td><input type="number" value="1"></td>
+<td><input type="number" value="40"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+ </tr>
+<tr>
+  <td>Southampton</td><td><input type="number" value="1"></td>
+<td><input type="number" value="42"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="4"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Salisbury</td><td><input type="number" value="1"></td>
+<td><input type="number" value="40"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="6"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Bath</td><td><input type="number" value="2"></td>
+<td><input type="number" value="45"></td>
+<td><input type="number" value="20"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Bristol</td><td><input type="number" value="1"></td>
+<td><input type="number" value="42"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="4"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Cardiff</td><td><input type="number" value="1"></td>
+<td><input type="number" value="40"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Dublin</td><td><input type="number" value="3"></td>
+<td><input type="number" value="48"></td>
+<td><input type="number" value="20"></td>
+<td><input type="number" value="8"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Liverpool</td><td><input type="number" value="2"></td>
+<td><input type="number" value="42"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Manchester</td><td><input type="number" value="3"></td>
+<td><input type="number" value="42"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="4"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Lake District</td><td><input type="number" value="2"></td>
+<td><input type="number" value="40"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="6"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>York</td><td><input type="number" value="2"></td>
+<td><input type="number" value="42"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Edinburgh</td><td><input type="number" value="2"></td>
+<td><input type="number" value="45"></td>
+<td><input type="number" value="20"></td>
+<td><input type="number" value="5"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+<tr>
+  <td>Glasgow</td><td><input type="number" value="1"></td>
+<td><input type="number" value="42"></td>
+<td><input type="number" value="18"></td>
+<td><input type="number" value="4"></td>
+<td><input type="number" value="25"></td>
+<td class="total-dia">0</td><td class="total-cidade">0</td>
+      </tr>
+
+
+      <!-- Continue com os demais destinos... -->
+    </tbody>
+    <tfoot>
+      <tr class="resumo">
+        <td>Total</td><td id="total-dias">0</td>
+        <td colspan="5">—</td>
+        <td id="total-geral">£0</td>
+      </tr>
+      <tr class="resumo">
+        <td>Média por dia</td><td colspan="6">—</td><td id="media-dia">£0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+    function calcularTotais() {
+      const rows = document.querySelectorAll("#gastos tbody tr");
+      let totalDias = 0;
+      let totalGeral = 0;
+
+      rows.forEach(row => {
+        const dias = parseInt(row.cells[1].querySelector("input").value) || 0;
+        const acomod = parseFloat(row.cells[2].querySelector("input").value) || 0;
+        const refeicoes = parseFloat(row.cells[3].querySelector("input").value) || 0;
+        const transporte = parseFloat(row.cells[4].querySelector("input").value) || 0;
+        const passeios = parseFloat(row.cells[5].querySelector("input").value) || 0;
+
+        const totalDia = acomod + refeicoes + transporte + passeios;
+        const totalCidade = totalDia * dias;
+
+        row.querySelector(".total-dia").textContent = totalDia.toFixed(2);
+        row.querySelector(".total-cidade").textContent = totalCidade.toFixed(2);
+
+        totalDias += dias;
+        totalGeral += totalCidade;
+      });
+
+      document.getElementById("total-dias").textContent = totalDias;
+      document.getElementById("total-geral").textContent = "£" + totalGeral.toFixed(2);
+      document.getElementById("media-dia").textContent = "£" + (totalGeral / totalDias).toFixed(2);
+    }
+
+    document.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", calcularTotais);
+    });
+
+    calcularTotais();
+  </script>
+
+</body>
+</html>

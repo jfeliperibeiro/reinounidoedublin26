@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Roteiro Europa 2026</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    #map { height: 600px; width: 100%; }
+    .itinerario { padding: 20px; background: #f4f4f4; }
+    .dia { margin-bottom: 15px; padding: 10px; background: #fff; border-left: 5px solid #0077cc; }
+  </style>
+</head>
+<body>
+<nav style="background:#0077cc; padding:10px; text-align:center;">
+  <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
+  <a href="roteiro.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro</a>
+  <a href="checklist.html" style="color:white; margin:0 15px; text-decoration:none;">🧳 Checklist</a>
+  <a href="gastos.html" style="color:white; margin:0 15px; text-decoration:none;">💸 Gastos</a>
+  <a href="galeria.html" style="color:white; margin:0 15px; text-decoration:none;">📸 Galeria</a>
+  <a href="contador.html" style="color:white; margin:0 15px; text-decoration:none;">⏳ Contador</a>
+  <a href="novosgastos.html" style="color:white; margin:0 15px; text-decoration:none;">🗂️ Calculadora de Gastos</a>
+</nav>
+
+  <h1 style="text-align:center;">🌍 Roteiro – Reino Unido e Dublin</h1>
+  <div id="map"></div>
+
+  <div class="itinerario">
+    <h2>📅 Itinerário com Horários</h2>
+    <div class="dia"><strong>31/03 – London:</strong> Chegada às 11h. Tarde livre para ambientação.</div>
+    <div class="dia"><strong>05/04 – Brighton:</strong> Saída 09:30, chegada 10:45.</div>
+    <div class="dia"><strong>06/04 – Seven Sisters & Eastbourne:</strong> Saída 09:00, chegada 09:45. Depois Eastbourne às 13:00.</div>
+    <div class="dia"><strong>07/04 – Portsmouth:</strong> Saída 09:00, chegada 11:00.</div>
+    <div class="dia"><strong>08/04 – Southampton:</strong> Saída 10:00, chegada 10:45.</div>
+    <div class="dia"><strong>09/04 – Salisbury:</strong> Saída 09:30, chegada 10:30.</div>
+    <div class="dia"><strong>10/04 – Bath:</strong> Saída 09:00, chegada 10:30.</div>
+    <div class="dia"><strong>12/04 – Bristol:</strong> Saída 10:00, chegada 10:30.</div>
+    <div class="dia"><strong>13/04 – Cardiff:</strong> Saída 09:30, chegada 10:30.</div>
+    <div class="dia"><strong>14/04 – Dublin:</strong> Saída 08:00, chegada 13:00.</div>
+    <div class="dia"><strong>17/04 – Liverpool:</strong> Saída 08:00, chegada 13:00.</div>
+    <div class="dia"><strong>19/04 – Manchester:</strong> Saída 10:00, chegada 11:00.</div>
+    <div class="dia"><strong>22/04 – Lake District:</strong> Saída 09:00, chegada 11:00.</div>
+    <div class="dia"><strong>24/04 – York:</strong> Saída 09:30, chegada 12:00.</div>
+    <div class="dia"><strong>26/04 – Edinburgh:</strong> Saída 09:00, chegada 11:30.</div>
+    <div class="dia"><strong>28/04 – Glasgow:</strong> Saída 10:00, chegada 11:00.</div>
+    <div class="dia"><strong>29/04 – London:</strong> Saída 09:00, chegada 13:30.</div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([51.5074, -0.1278], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const cidades = {
+      London: [51.5074, -0.1278],
+      Brighton: [50.8225, -0.1372],
+      SevenSisters: [50.7670, 0.0036],
+      Eastbourne: [50.7680, 0.2905],
+      Portsmouth: [50.8017, -1.0970],
+      Southampton: [50.9097, -1.4043],
+      Salisbury: [51.0688, -1.7945],
+      Bath: [51.3758, -2.3599],
+      Bristol: [51.4545, -2.5879],
+      Cardiff: [51.4816, -3.1791],
+      Dublin: [53.3498, -6.2603],
+      Liverpool: [53.4084, -2.9916],
+      Manchester: [53.4808, -2.2426],
+      LakeDistrict: [54.3760, -2.9035],
+      York: [53.9590, -1.0815],
+      Edinburgh: [55.9533, -3.1883],
+      Glasgow: [55.8642, -4.2518]
+    };
+
+    const rota = [
+      "London", "Brighton", "SevenSisters", "Eastbourne", "Portsmouth",
+      "Southampton", "Salisbury", "Bath", "Bristol", "Cardiff",
+      "Dublin", "Liverpool", "Manchester", "LakeDistrict", "York",
+      "Edinburgh", "Glasgow", "London"
+    ];
+
+    for (const [nome, coords] of Object.entries(cidades)) {
+      L.marker(coords).addTo(map)
+        .bindPopup(`<b>${nome}</b>`)
+        .bindTooltip(nome, {sticky: true});
+    }
+
+    for (let i = 0; i < rota.length - 1; i++) {
+      const origem = cidades[rota[i]];
+      const destino = cidades[rota[i + 1]];
+      L.polyline([origem, destino], {
+        color: "#0077cc",
+        weight: 4,
+        opacity: 0.8
+      }).addTo(map);
+    }
+  </script>
+
+</body>
+</html>

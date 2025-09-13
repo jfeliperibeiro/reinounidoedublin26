@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist de Viagem</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
+    h1 { text-align: center; margin-bottom: 30px; }
+    .categoria { margin-top: 30px; font-size: 1.2em; font-weight: bold; color: #0077cc; }
+    .item { margin: 10px 0; }
+    label { margin-left: 10px; }
+    input[type="checkbox"] { transform: scale(1.2); }
+  </style>
+</head>
+<body>
+
+  <nav style="background:#0077cc; padding:10px; text-align:center;">
+    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
+    <a href="roteiro.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro</a>
+    <a href="checklist.html" style="color:white; margin:0 15px; text-decoration:none;">🧳 Checklist</a>
+    <a href="gastos.html" style="color:white; margin:0 15px; text-decoration:none;">💸 Gastos</a>
+    <a href="galeria.html" style="color:white; margin:0 15px; text-decoration:none;">📸 Galeria</a>
+    <a href="contador.html" style="color:white; margin:0 15px; text-decoration:none;">⏳ Contador</a>
+      <a href="novosgastos.html" style="color:white; margin:0 15px; text-decoration:none;">🗂️ Calculadora de Gastos</a>
+  </nav>
+
+  <h1>🧳 Checklist de Viagem – Reino Unido e Dublin</h1>
+
+  <div class="categoria">📄 Documentos e Requisitos</div>
+  <div class="item"><input type="checkbox" id="passaporte"><label for="passaporte">Passaporte válido (mínimo 6 meses)</label></div>
+  <div class="item"><input type="checkbox" id="seguro"><label for="seguro">Seguro viagem internacional</label></div>
+  <div class="item"><input type="checkbox" id="vacinas"><label for="vacinas">Vacinas obrigatórias (COVID-19, febre amarela se exigido)</label></div>
+  <div class="item"><input type="checkbox" id="formulario"><label for="formulario">Formulário eletrônico de entrada no Reino Unido (e.g. UK ETA)</label></div>
+  <div class="item"><input type="checkbox" id="passagens"><label for="passagens">Passagens aéreas de ida e volta</label></div>
+  <div class="item"><input type="checkbox" id="reservas"><label for="reservas">Reservas de hospedagem confirmadas</label></div>
+
+  <div class="categoria">💳 Dinheiro e Comunicação</div>
+  <div class="item"><input type="checkbox" id="cartoes"><label for="cartoes">Cartões de crédito/débito habilitados para uso internacional</label></div>
+  <div class="item"><input type="checkbox" id="moeda"><label for="moeda">Dinheiro em espécie (libras/euros)</label></div>
+  <div class="item"><input type="checkbox" id="chip"><label for="chip">Chip internacional ou plano de roaming</label></div>
+  <div class="item"><input type="checkbox" id="apps"><label for="apps">Apps instalados: mapas, tradutor, bancos, transporte</label></div>
+
+  <div class="categoria">🧥 Itens Pessoais</div>
+  <div class="item"><input type="checkbox" id="roupas"><label for="roupas">Roupas adequadas para clima europeu (primavera)</label></div>
+  <div class="item"><input type="checkbox" id="adaptador"><label for="adaptador">Adaptador de tomada universal</label></div>
+  <div class="item"><input type="checkbox" id="medicamentos"><label for="medicamentos">Medicamentos pessoais e básicos</label></div>
+  <div class="item"><input type="checkbox" id="higiene"><label for="higiene">Itens de higiene pessoal</label></div>
+  <div class="item"><input type="checkbox" id="mochila"><label for="mochila">Mochila leve para passeios diários</label></div>
+
+  <div class="categoria">🧠 Extras Inteligentes</div>
+  <div class="item"><input type="checkbox" id="backup"><label for="backup">Cópia digital dos documentos (em nuvem ou e-mail)</label></div>
+  <div class="item"><input type="checkbox" id="roteiro"><label for="roteiro">Roteiro impresso ou salvo offline</label></div>
+  <div class="item"><input type="checkbox" id="contatos"><label for="contatos">Lista de contatos de emergência</label></div>
+  <div class="item"><input type="checkbox" id="alertas"><label for="alertas">Alertas de viagem e requisitos atualizados</label></div>
+
+</body>
+</html>

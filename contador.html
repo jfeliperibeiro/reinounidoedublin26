@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador Regressivo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 40px; background: #f0f8ff; text-align: center; }
+    h1 { font-size: 2em; margin-bottom: 20px; }
+    .contador { font-size: 3em; color: #0077cc; margin-top: 20px; }
+    .mensagem { font-size: 1.2em; margin-top: 10px; color: #333; }
+  </style>
+</head>
+<body>
+
+  <nav style="background:#0077cc; padding:10px; text-align:center;">
+    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
+    <a href="roteiro.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro</a>
+    <a href="checklist.html" style="color:white; margin:0 15px; text-decoration:none;">🧳 Checklist</a>
+    <a href="gastos.html" style="color:white; margin:0 15px; text-decoration:none;">💸 Gastos</a>
+    <a href="galeria.html" style="color:white; margin:0 15px; text-decoration:none;">📸 Galeria</a>
+    <a href="contador.html" style="color:white; margin:0 15px; text-decoration:none;">⏳ Contador</a>
+      <a href="novosgastos.html" style="color:white; margin:0 15px; text-decoration:none;">🗂️ Calculadora de Gastos</a>
+  </nav>
+
+  <h1>⏳ Contagem Regressiva para sua Viagem – Reino Unido e Dublin</h1>
+  <div class="contador"><span id="dias"></span> dias</div>
+  <div class="mensagem">Faltam poucos passos para sua aventura pela Europa começar!</div>
+
+  <script>
+    const dataPartida = new Date("2026-03-30");
+    const hoje = new Date();
+    const diff = Math.ceil((dataPartida - hoje) / (1000 * 60 * 60 * 24));
+    document.getElementById("dias").textContent = diff > 0 ? diff : "🚀 Já começou!";
+  </script>
+
+</body>
+</html>
