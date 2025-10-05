@@ -19,15 +19,16 @@
 </head>
 <body>
 <nav style="background:#0077cc; padding:10px; text-align:center;">
-  <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
+   <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
   <a href="roteiro.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro</a>
   <a href="detalhado.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro Detalhado</a>
+  <a href="deslocamento.html" style="color:white; margin:0 15px; text-decoration:none;">✈️ Deslocamentos</a>
   <a href="checklist.html" style="color:white; margin:0 15px; text-decoration:none;">🧳 Checklist</a>
   <a href="gastos.html" style="color:white; margin:0 15px; text-decoration:none;">💸 Gastos</a>
   <a href="galeria.html" style="color:white; margin:0 15px; text-decoration:none;">📸 Galeria</a>
   <a href="contador.html" style="color:white; margin:0 15px; text-decoration:none;">⏳ Contador</a>
-  <a href="novosgastos.html" style="color:white; margin:0 15px; text-decoration:none;">🗂️ Calculadora de Gastos</a>
-  <a href="https://caribu.com.br/contato/" style="color:white; margin:0 15px; text-decoration:none;">Caribu Turismo</a>
+   <a href="https://caribu.com.br/contato/"  style="color:white; margin:0 15px; text-decoration:none;"> <img src="caribu.png" alt="Ícone" style="width:50px; height:50px; vertical-align:middle;">
+ Caribu Travel</a>
 </nav>
 
   <h1 style="text-align:center;">🌍 Mapa – Reino Unido e Dublin</h1>
@@ -35,30 +36,13 @@
 
   <div class="itinerario">
     <h2>📅 Itinerário com Horários</h2>
-    <div class="dia"><strong>31/03 – London:</strong> Chegada às 11h. Tarde livre para ambientação.</div>
-    <div class="dia"><strong>05/04 – Brighton:</strong> Saída 09:30, chegada 10:45.</div>
-    <div class="dia"><strong>06/04 – Seven Sisters & Eastbourne:</strong> Saída 09:00, chegada 09:45. Depois Eastbourne às 13:00.</div>
-    <div class="dia"><strong>07/04 – Portsmouth:</strong> Saída 09:00, chegada 11:00.</div>
-    <div class="dia"><strong>08/04 – Southampton:</strong> Saída 10:00, chegada 10:45.</div>
-    <div class="dia"><strong>09/04 – Salisbury:</strong> Saída 09:30, chegada 10:30.</div>
-    <div class="dia"><strong>10/04 – Bath:</strong> Saída 09:00, chegada 10:30.</div>
-    <div class="dia"><strong>12/04 – Bristol:</strong> Saída 10:00, chegada 10:30.</div>
-    <div class="dia"><strong>13/04 – Cardiff:</strong> Saída 09:30, chegada 10:30.</div>
-    <div class="dia"><strong>14/04 – Dublin:</strong> Saída 08:00, chegada 13:00.</div>
-    <div class="dia"><strong>17/04 – Liverpool:</strong> Saída 08:00, chegada 13:00.</div>
-    <div class="dia"><strong>19/04 – Manchester:</strong> Saída 10:00, chegada 11:00.</div>
-    <div class="dia"><strong>22/04 – Lake District:</strong> Saída 09:00, chegada 11:00.</div>
-    <div class="dia"><strong>24/04 – York:</strong> Saída 09:30, chegada 12:00.</div>
-    <div class="dia"><strong>26/04 – Edinburgh:</strong> Saída 09:00, chegada 11:30.</div>
-    <div class="dia"><strong>28/04 – Glasgow:</strong> Saída 10:00, chegada 11:00.</div>
-    <div class="dia"><strong>29/04 – London:</strong> Saída 09:00, chegada 13:30.</div>
+    <!-- O conteúdo abaixo será gerado dinamicamente com base nos dados da planilha -->
   </div>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
-    //var map = L.map('map').setView([51.5074, -0.1278], 6);
+    // Configuração do mapa Leaflet (mantida como estava no seu código original)
     var map = L.map('map').setView([54.5, -3.0], 6);
-
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
@@ -81,14 +65,16 @@
       LakeDistrict: [54.3760, -2.9035],
       York: [53.9590, -1.0815],
       Edinburgh: [55.9533, -3.1883],
-      Glasgow: [55.8642, -4.2518]
+      Glasgow: [55.8642, -4.2518],
+      Newcastle: [54.9784, -1.6174]
+
     };
 
     const rota = [
-      "London", "Brighton", "SevenSisters", "Eastbourne", "Portsmouth",
+      "London", "Brighton", "SevenSisters", "Portsmouth",
       "Southampton", "Salisbury", "Bath", "Bristol", "Cardiff",
-      "Dublin", "Liverpool", "Manchester", "LakeDistrict", "York",
-      "Edinburgh", "Glasgow", "London"
+      "Dublin", "Liverpool", "Manchester", "LakeDistrict",  "Glasgow",
+      "Edinburgh", "Newcastle", "York","London"
     ];
 
     for (const [nome, coords] of Object.entries(cidades)) {
@@ -106,20 +92,86 @@
         opacity: 0.8
       }).addTo(map);
     }
+
+
+    // --- Início do script para gerar o itinerário dinamicamente ---
+    const itineraryData = [
+      ["Ida","2026-03-27 00:00:00","São Paulo","Aviao"],
+      ["1","2026-03-28 00:00:00","London","London"],
+      ["2","2026-03-29 00:00:00","London","London"],
+      ["3","2026-03-30 00:00:00","London","London"],
+      ["4","2026-03-31 00:00:00","London","London"],
+      ["5","2026-04-01 00:00:00","Brighton","Brighton"],
+      ["6","2026-04-02 00:00:00","Seven Sisters (bate-volta)","Brighton"],
+      ["7","2026-04-03 00:00:00","Portsmouth","Portsmouth"],
+      ["8","2026-04-04 00:00:00","Southampton","Southampton"],
+      ["9","2026-04-05 00:00:00","Salisbury","Salisbury"],
+      ["10","2026-04-06 00:00:00","Bate-volta a Stonehenge","Salisbury"],
+      ["11","2026-04-07 00:00:00","Bath","Bath"],
+      ["12","2026-04-08 00:00:00","Bath","Bath"],
+      ["13","2026-04-09 00:00:00","Bristol","Bristol"],
+      ["14","2026-04-10 00:00:00","Cardiff","Cardiff"],
+      ["15","2026-04-11 00:00:00","Dublin","Dublin"],
+      ["16","2026-04-12 00:00:00","Dublin","Dublin"],
+      ["17","2026-04-13 00:00:00","Dublin","Dublin"],
+      ["18","2026-04-14 00:00:00","Liverpool","Liverpool"],
+      ["19","2026-04-15 00:00:00","Liverpool","Liverpool"],
+      ["20","2026-04-16 00:00:00","Manchester","Manchester"],
+      ["21","2026-04-17 00:00:00","Manchester","Manchester"],
+      ["22","2026-04-18 00:00:00","Manchester","Manchester"],
+      ["23","2026-04-19 00:00:00","Manchester","Manchester"],
+      ["24","2026-04-20 00:00:00","Lake District","Lake District"],
+      ["25","2026-04-21 00:00:00","Lake District","Lake District"],
+      ["26","2026-04-22 00:00:00","Glasgow","Glasgow"],
+      ["27","2026-04-23 00:00:00","Edinburgh","Edinburgh"],
+      ["28","2026-04-24 00:00:00","Highlands + Lago Ness","Edinburgh"],
+      ["29","2026-04-25 00:00:00","Stirling ","Edinburgh"],
+      ["30","2026-04-26 00:00:00","Edinburgh","Newcastle"],
+      ["31","2026-04-27 00:00:00","Newcastle","Newcastle"],
+      ["32","2026-04-28 00:00:00","York","York"],
+      ["33","2026-04-29 00:00:00","York","York"],
+      ["34","2026-04-30 00:00:00","London","London"],
+      ["35","2026-05-01 00:00:00","London","London"],
+      ["volta","2026-05-02 00:00:00","London","Aviao"],
+      ["","2026-05-03 00:00:00","aviao","Sâo Paulo"]
+    ];
+
+    const itinerarioDiv = document.querySelector('.itinerario');
+    let newItineraryHtml = "<h2>📅 Itinerário com Horários</h2>\n";
+
+    itineraryData.forEach(record => {
+        const [contagem, diaRaw, passar_o_dia, dormir] = record;
+        const date = new Date(diaRaw);
+        const formattedDate = date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+        let description = "";
+
+        if (contagem === "Ida") {
+            description = `Ida: ${passar_o_dia} (${dormir})`;
+        } else if (contagem === "volta") {
+            description = `Volta: De ${passar_o_dia} (${dormir})`;
+        } else if (contagem === "" && dormir.trim() === "Sâo Paulo") { // Caso específico da última entrada
+            description = `Chegada em ${dormir}.`;
+        } else { // Dias numerados do roteiro
+            if (passar_o_dia.trim() === dormir.trim()) {
+                // Se passar_o_dia for igual a dormir, é um dia livre na mesma cidade
+                description = `${passar_o_dia}: Dia livre e pernoite em ${dormir}.`;
+            } else {
+                // Se passar_o_dia for diferente de dormir
+                if (passar_o_dia.includes("(bate-volta)") || passar_o_dia.includes("Bate-volta")) {
+                    // Se for um "bate-volta"
+                     description = `${passar_o_dia} (Pernoite em ${dormir}).`;
+                } else {
+                    // Outras atividades ou dias de viagem entre cidades
+                    description = `Dia em ${passar_o_dia}. Pernoite em ${dormir}.`;
+                }
+            }
+        }
+        newItineraryHtml += `<div class="dia"><strong>${formattedDate} – ${description}</strong></div>\n`;
+    });
+    itinerarioDiv.innerHTML = newItineraryHtml;
+    // --- Fim do script para gerar o itinerário dinamicamente ---
   </script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
