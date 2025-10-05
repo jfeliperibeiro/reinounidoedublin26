@@ -3,72 +3,766 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roteiro Completo – Europa 2026</title>
+  <title>Roteiro Completo – Reino Unido e Dublin 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
-    h1 { text-align: center; margin-bottom: 30px; }
-    .card { background: #fff; padding: 15px; margin-bottom: 15px; border-left: 5px solid #0077cc; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .card h2 { margin: 0 0 10px; font-size: 1.2em; }
-    .card ul { margin-top: 10px; padding-left: 20px; }
+    body { 
+      font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+      margin: 0; 
+      padding: 20px; 
+      background: #f4f4f4; 
+    }
+    nav {
+      background:#0077cc; 
+      padding:10px; 
+      text-align:center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav a {
+      color:white; 
+      margin:0 15px; 
+      text-decoration:none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #add8e6; /* Light blue on hover */
+    }
+    nav img {
+      width:30px; /* Ajustado para 30px para consistência com o outro menu */
+      height:30px; /* Ajustado para 30px para consistência com o outro menu */
+      vertical-align:middle;
+      margin-right: 5px;
+    }
+    h1 { 
+      text-align: center; 
+      margin-bottom: 30px; 
+      color: #0077cc;
+    }
+    .card { 
+      background: #fff; 
+      padding: 15px; 
+      margin-bottom: 15px; 
+      border-left: 5px solid #0077cc; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+      border-radius: 4px;
+    }
+    .card h2 { 
+      margin: 0 0 10px; 
+      font-size: 1.2em; 
+      color: #005a9c;
+    }
+    .card ul { 
+      margin-top: 10px; 
+      padding-left: 20px; 
+      list-style-type: disc;
+    }
+    .card ul li {
+      margin-bottom: 5px;
+    }
     @media (max-width: 768px) {
-  .menu { flex-direction: column; }
-  .container { padding: 10px; }
-}
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+      nav { flex-direction: column; }
+      nav a { margin: 5px 0; }
+    }
   </style>
 </head>
 <body>
 <nav style="background:#0077cc; padding:10px; text-align:center;">
-  <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">🗺️ Mapa</a>
+   <a href="index.html" style="color:white; margin:0 15px; text-decoration:none;"> <img src="flag.png" alt="Ícone" style="width:50px; height:50px; vertical-align:middle;"> Mapa</a>
   <a href="roteiro.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro</a>
-  <a href="detalhado.html" style="color:white; margin:0 15px; text-decoration:none;">📅 Roteiro Detalhado</a>
-  <a href="deslocamento.html" style="color:white; margin:0 15px; text-decoration:none;">✈️ Deslocamentos</a>
+ <a href="deslocamento.html" style="color:white; margin:0 15px; text-decoration:none;">✈️ Deslocamentos</a>
   <a href="checklist.html" style="color:white; margin:0 15px; text-decoration:none;">🧳 Checklist</a>
-  <a href="gastos.html" style="color:white; margin:0 15px; text-decoration:none;">💸 Gastos</a>
+  
   <a href="galeria.html" style="color:white; margin:0 15px; text-decoration:none;">📸 Galeria</a>
   <a href="contador.html" style="color:white; margin:0 15px; text-decoration:none;">⏳ Contador</a>
    <a href="https://caribu.com.br/contato/"  style="color:white; margin:0 15px; text-decoration:none;"> <img src="caribu.png" alt="Ícone" style="width:50px; height:50px; vertical-align:middle;">
  Caribu Travel</a>
- </nav>
+</nav>
+  <h1>📅 Roteiro Detalhado – Reino Unido e Dublin</h1>
 
-  <h1>📅 Roteiro Completo – Reino Unido e Dublin</h1>
+  <div class="disclaimer">
+    <strong>Atenção:</strong> As informações sobre "Pontos Turísticos", "Eventos" e "Refeições Econômicas" nesta página são **exemplos e sugestões gerais**. A aba "roteiro" da sua planilha não contém esses detalhes específicos. Você precisará editar o array `itineraryDetails` no código JavaScript desta página para incluir seus planos reais para cada dia.
+  </div>
 
-  <div class="card"><h2>31/03 – London (Chegada às 11h)</h2><ul><li>Check-in e almoço leve</li><li>Passeio pelo Hyde Park</li><li>Museu de História Natural</li><li>Jantar em Notting Hill</li></ul></div>
-  <div class="card"><h2>01/04 – London</h2><ul><li>Palácio de Buckingham</li><li>Westminster Abbey e Big Ben</li><li>Caminhada pelo Tâmisa</li><li>Mercado de Borough</li></ul></div>
-  <div class="card"><h2>02/04 – London</h2><ul><li>Torre de Londres e Tower Bridge</li><li>Museu Britânico</li><li>Chinatown e Soho</li></ul></div>
-  <div class="card"><h2>03/04 – London</h2><ul><li>Camden Market</li><li>Regent’s Canal</li><li>Museu Victoria & Albert</li></ul></div>
-  <div class="card"><h2>04/04 – London</h2><ul><li>Greenwich Park</li><li>Portobello Road</li><li>Jantar em food court</li></ul></div>
-  <div class="card"><h2>05/04 – Brighton</h2><ul><li>Brighton Pier</li><li>Royal Pavilion</li><li>Pôr do sol na praia</li></ul></div>
-  <div class="card"><h2>06/04 – Seven Sisters & Eastbourne</h2><ul><li>Trilha pelas falésias</li><li>Almoço em Eastbourne</li><li>Passeio pelo calçadão</li></ul></div>
-  <div class="card"><h2>07/04 – Portsmouth</h2><ul><li>Museu naval HMS Victory</li><li>Porto histórico</li><li>Jantar à beira-mar</li></ul></div>
-  <div class="card"><h2>08/04 – Southampton</h2><ul><li>SeaCity Museum</li><li>Caminhada pelo centro</li><li>Pub local</li></ul></div>
-  <div class="card"><h2>09/04 – Salisbury</h2><ul><li>Catedral de Salisbury</li><li>Excursão a Stonehenge</li><li>Jantar em restaurante familiar</li></ul></div>
-  <div class="card"><h2>10/04 – Bath</h2><ul><li>Termas Romanas</li><li>Royal Crescent</li><li>Chá da tarde</li></ul></div>
-  <div class="card"><h2>11/04 – Bath</h2><ul><li>Abadia de Bath</li><li>Jane Austen Centre</li><li>Mercado local</li></ul></div>
-  <div class="card"><h2>12/04 – Bristol</h2><ul><li>Street art tour</li><li>Passeio de barco</li><li>St Nicholas Market</li></ul></div>
-  <div class="card"><h2>13/04 – Cardiff</h2><ul><li>Castelo de Cardiff</li><li>Museu Nacional</li><li>Música galesa</li></ul></div>
-  <div class="card"><h2>14/04 – Dublin</h2><ul><li>Temple Bar</li><li>Trinity College</li><li>Pub crawl</li></ul></div>
-  <div class="card"><h2>15/04 – Dublin</h2><ul><li>Phoenix Park</li><li>Museu Nacional</li><li>Jantar econômico</li></ul></div>
-  <div class="card"><h2>16/04 – Dublin</h2><ul><li>Rio Liffey</li><li>Guinness Storehouse</li><li>Noite livre</li></ul></div>
-  <div class="card"><h2>17/04 – Liverpool</h2><ul><li>Beatles Story</li><li>Albert Dock</li><li>Jantar com vista</li></ul></div>
-  <div class="card"><h2>18/04 – Liverpool</h2><ul><li>Catedral de Liverpool</li><li>Museu da cidade</li><li>Mercado local</li></ul></div>
-  <div class="card"><h2>19/04 – Manchester</h2><ul><li>Museu do Futebol</li><li>Northern Quarter</li><li>Pub com música</li></ul></div>
-  <div class="card"><h2>20/04 – Manchester</h2><ul><li>Biblioteca John Rylands</li><li>Jardim Botânico</li><li>Jantar econômico</li></ul></div>
-  <div class="card"><h2>21/04 – Manchester</h2><ul><li>Science and Industry Museum</li><li>Compras ou descanso</li></ul></div>
-  <div class="card"><h2>22/04 – Lake District</h2><ul><li>Lake Windermere</li><li>Trilha em Keswick</li><li>Chá com vista</li></ul></div>
-  <div class="card"><h2>23/04 – Lake District</h2><ul><li>Ambleside</li><li>Castelos e mirantes</li><li>Pub rural</li></ul></div>
-  <div class="card"><h2>24/04 – York</h2><ul><li>Muralhas medievais</li><li>York Minster</li><li>Jantar vitoriano</li></ul></div>
-  <div class="card"><h2>25/04 – York</h2><ul><li>Museu Ferroviário</li><li>Shambles Market</li><li>Caminhada noturna</li></ul></div>
-  <div class="card"><h2>26/04 – Edinburgh</h2><ul><li>Castelo de Edinburgh</li><li>Royal Mile</li><li>Pub escocês</li></ul></div>
-  <div class="card"><h2>27/04 – Edinburgh</h2><ul><li>Museu Nacional</li><li>Calton Hill</li><li>Jantar com vista</li></ul></div>
-  <div class="card"><h2>28/04 – Glasgow</h2><ul><li>Galeria de Arte Moderna</li><li>Passeio pelo centro</li><li>Música ao vivo</li></ul></div>
-  <div class="card"><h2>29/04 – London</h2><ul><li>Oxford Street</li><li>Passeio final</li><li>Jantar de despedida</li></ul></div>
-  <div class="card"><h2>30/04 – London</h2><ul><li>Tate Modern</li><li>Regent’s Park</li><li>Preparativos para retorno</li></ul></div>
-  <div class="card"><h2>01/05 – São Paulo</h2><ul><li>Check-out</li><li>Deslocamento ao aeroporto</li><li>Voo de retorno ✈️</li></ul></div>
+  <div class="itinerario-detalhado" id="itinerario-detalhado-container">
+    <!-- O conteúdo será gerado dinamicamente via JavaScript -->
+  </div>
+
+  <script>
+    // Dados gerais do roteiro da sua planilha (para datas e cidades principais)
+    // ESTES SÃO OS DADOS DA SUA ABA "ROTEIRO" (que você chamou de "calendário" em uma interação anterior)
+    const rawItineraryData = [
+      ["Ida","2026-03-27 00:00:00","São Paulo","Aviao"],
+      ["1","2026-03-28 00:00:00","London","London"],
+      ["2","2026-03-29 00:00:00","London","London"],
+      ["3","2026-03-30 00:00:00","London","London"],
+      ["4","2026-03-31 00:00:00","London","London"],
+      ["5","2026-04-01 00:00:00","Brighton","Brighton"],
+      ["6","2026-04-02 00:00:00","Seven Sisters (bate-volta)","Brighton"],
+      ["7","2026-04-03 00:00:00","Portsmouth","Portsmouth"],
+      ["8","2026-04-04 00:00:00","Southampton","Southampton"],
+      ["9","2026-04-05 00:00:00","Salisbury","Salisbury"],
+      ["10","2026-04-06 00:00:00","Bate-volta a Stonehenge","Salisbury"],
+      ["11","2026-04-07 00:00:00","Bath","Bath"],
+      ["12","2026-04-08 00:00:00","Bath","Bath"],
+      ["13","2026-04-09 00:00:00","Bristol","Bristol"],
+      ["14","2026-04-10 00:00:00","Cardiff","Cardiff"],
+      ["15","2026-04-11 00:00:00","Dublin","Dublin"],
+      ["16","2026-04-12 00:00:00","Dublin","Dublin"],
+      ["17","2026-04-13 00:00:00","Dublin","Dublin"],
+      ["18","2026-04-14 00:00:00","Liverpool","Liverpool"],
+      ["19","2026-04-15 00:00:00","Liverpool","Liverpool"],
+      ["20","2026-04-16 00:00:00","Manchester","Manchester"],
+      ["21","2026-04-17 00:00:00","Manchester","Manchester"],
+      ["22","2026-04-18 00:00:00","Manchester","Manchester"],
+      ["23","2026-04-19 00:00:00","Manchester","Manchester"],
+      ["24","2026-04-20 00:00:00","Lake District","Lake District"],
+      ["25","2026-04-21 00:00:00","Lake District","Lake District"],
+      ["26","2026-04-22 00:00:00","Glasgow","Glasgow"],
+      ["27","2026-04-23 00:00:00","Edinburgh","Edinburgh"],
+      ["28","2026-04-24 00:00:00","Highlands + Lago Ness","Edinburgh"],
+      ["29","2026-04-25 00:00:00","Stirling ","Edinburgh"],
+      ["30","2026-04-26 00:00:00","Edinburgh","Newcastle"],
+      ["31","2026-04-27 00:00:00","Newcastle","Newcastle"],
+      ["32","2026-04-28 00:00:00","York","York"],
+      ["33","2026-04-29 00:00:00","York","York"],
+      ["34","2026-04-30 00:00:00","London","London"],
+      ["35","2026-05-01 00:00:00","London","London"],
+      ["volta","2026-05-02 00:00:00","London","Aviao"],
+      ["","2026-05-03 00:00:00","aviao","Sâo Paulo"]
+    ];
+
+    // ESTES SÃO OS DETALHES DE PONTOS TURÍSTICOS, EVENTOS E REFEIÇÕES.
+    // VOCÊ DEVE EDITAR ESTE ARRAY COM SEUS PRÓPRIOS PLANOS!
+    const itineraryDetails = [
+      {
+        city: "São Paulo", // Dia de Ida
+        date: "2026-03-27",
+        dayDescription: "Dia da partida do Brasil.",
+        attractions: ["Preparativos finais para a viagem."],
+        events: ["Embarque no Aeroporto de Guarulhos."],
+        economicalMeals: ["Refeição pré-voo em casa ou no aeroporto."]
+      },
+      {
+        city: "London",
+        date: "2026-03-28", // Dia 1
+        dayDescription: "Chegada em Londres e primeiros passeios.",
+        attractions: [
+          "Chegada ao aeroporto e deslocamento ao hotel.",
+          "Check-in e almoço leve.",
+          "Passeio pelo Hyde Park (Serpentine Lake, Speakers' Corner).",
+          "Museu de História Natural (entrada gratuita)."
+        ],
+        events: ["Pode haver exposições gratuitas nos museus."],
+        economicalMeals: [
+          "Almoço: Pret A Manger (sanduíches e saladas) ou Tesco Meal Deal (supermercado).",
+          "Jantar: Pub local com 'pub grub' (ex: The Churchill Arms em Notting Hill) ou Mercado de Rua em Borough Market (opções variadas e mais baratas)."
+        ]
+      },
+      {
+        city: "London",
+        date: "2026-03-29", // Dia 2
+        dayDescription: "Explorando os ícones de Londres.",
+        attractions: [
+          "Palácio de Buckingham (Cerimônia da Troca da Guarda - verificar dias e horários).",
+          "Westminster Abbey e Big Ben (exterior).",
+          "Caminhada pela Parliament Square e Whitehall.",
+          "Passeio pelo rio Tâmisa (margem sul, London Eye - exterior)."
+        ],
+        events: ["Troca da Guarda (verificar calendário oficial)."],
+        economicalMeals: [
+          "Almoço: Almoço piquenique no St. James's Park ou opções baratas perto de Westminster.",
+          "Jantar: Comida de rua no Borough Market ou um restaurante casual na área de Covent Garden."
+        ]
+      },
+      {
+        city: "London",
+        date: "2026-03-30", // Dia 3
+        dayDescription: "História e cultura em Londres.",
+        attractions: [
+          "Torre de Londres e Tower Bridge (visita externa ou interna se houver interesse).",
+          "Museu Britânico (entrada gratuita).",
+          "Explorar Chinatown e Soho."
+        ],
+        events: ["Exposições temporárias no British Museum."],
+        economicalMeals: [
+          "Almoço: Hawker House (street food market em Canary Wharf) ou Eat.",
+          "Jantar: Restaurantes em Chinatown ou opções de comida rápida em Soho."
+        ]
+      },
+      {
+        city: "London",
+        date: "2026-03-31", // Dia 4
+        dayDescription: "Alternativas e arte em Londres.",
+        attractions: [
+          "Camden Market (explorar barracas, arte de rua).",
+          "Passeio pelo Regent’s Canal.",
+          "Museu Victoria & Albert (entrada gratuita)."
+        ],
+        events: ["Música ao vivo em Camden Town (noite)."],
+        economicalMeals: [
+          "Almoço: Comida de rua variada e barata em Camden Market.",
+          "Jantar: Food court no Westfield Stratford City ou Wagamama (noodles)."
+        ]
+      },
+      {
+        city: "Brighton",
+        date: "2026-04-01", // Dia 5
+        dayDescription: "Chegada em Brighton, cidade litorânea.",
+        attractions: [
+          "Deslocamento de trem para Brighton.",
+          "Brighton Pier (jogos, atrações clássicas).",
+          "Royal Pavilion (exterior e jardins).",
+          "Passeio pelas 'Lanes' (ruas estreitas com lojas)."
+        ],
+        events: ["Música de rua nos Lanes, pôr do sol na praia."],
+        economicalMeals: [
+          "Almoço: Fish and chips na beira da praia.",
+          "Jantar: Restaurantes casuais ou pubs nas Lanes."
+        ]
+      },
+      {
+        city: "Brighton",
+        date: "2026-04-02", // Dia 6
+        dayDescription: "Bate-volta às Seven Sisters.",
+        attractions: [
+          "Viagem de ônibus para Seven Sisters Country Park.",
+          "Trilha pelas falésias de giz (Seven Sisters).",
+          "Visita à vila de East Dean (The Tiger Inn).",
+          "Retorno a Brighton."
+        ],
+        events: ["Nenhum evento específico, focar na natureza."],
+        economicalMeals: [
+          "Almoço: Sanduíches e lanches levados para o piquenique nas falésias ou The Tiger Inn em East Dean.",
+          "Jantar: Pub com comida boa e barata em Brighton."
+        ]
+      },
+      {
+        city: "Portsmouth",
+        date: "2026-04-03", // Dia 7
+        dayDescription: "História naval em Portsmouth.",
+        attractions: [
+          "Deslocamento de trem para Portsmouth.",
+          "Visita ao Historic Dockyard (HMS Victory, Mary Rose Museum).",
+          "Spinnaker Tower (vista panorâmica)."
+        ],
+        events: ["Pode haver eventos navais ou feiras no dockyard."],
+        economicalMeals: [
+          "Almoço: Opções de comida rápida no Historic Dockyard ou Waterfront Cafe.",
+          "Jantar: Restaurantes à beira-mar em Gunwharf Quays."
+        ]
+      },
+      {
+        city: "Southampton",
+        date: "2026-04-04", // Dia 8
+        dayDescription: "Southampton e a história do Titanic.",
+        attractions: [
+          "Deslocamento de trem para Southampton.",
+          "SeaCity Museum (exposição sobre o Titanic).",
+          "Muralhas medievais da cidade.",
+          "Passeio pelo centro."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Restaurantes casuais ou cafeterias no centro da cidade.",
+          "Jantar: Pub tradicional como 'The Giddy Bridge'."
+        ]
+      },
+      {
+        city: "Salisbury",
+        date: "2026-04-05", // Dia 9
+        dayDescription: "Catedral e ambiente medieval em Salisbury.",
+        attractions: [
+          "Deslocamento de trem para Salisbury.",
+          "Catedral de Salisbury (Magna Carta, torre mais alta do Reino Unido).",
+          "Ruas medievais da cidade."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Cafeterias ou padarias locais.",
+          "Jantar: Restaurante familiar ou pub como 'The Chapter House'."
+        ]
+      },
+      {
+        city: "Salisbury",
+        date: "2026-04-06", // Dia 10
+        dayDescription: "Excursão a Stonehenge.",
+        attractions: [
+          "Excursão de ônibus para Stonehenge (e talvez Avebury).",
+          "Visita ao sítio arqueológico de Stonehenge."
+        ],
+        events: ["Nenhum evento específico, mas uma experiência histórica única."],
+        economicalMeals: [
+          "Almoço: Lanche na lanchonete de Stonehenge ou levado.",
+          "Jantar: Retorno a Salisbury, jantar em pub ou restaurante."
+        ]
+      },
+      {
+        city: "Bath",
+        date: "2026-04-07", // Dia 11
+        dayDescription: "Termas Romanas e arquitetura georgiana.",
+        attractions: [
+          "Deslocamento de trem para Bath.",
+          "Termas Romanas (Roman Baths).",
+          "Abadia de Bath (Bath Abbey).",
+          "Pulteney Bridge."
+        ],
+        events: ["Pode haver concertos na Abadia."],
+        economicalMeals: [
+          "Almoço: Opciones de sanduíches e saladas perto das Termas.",
+          "Jantar: Restaurantes informais ou pubs como 'The Raven'."
+        ]
+      },
+      {
+        city: "Bath",
+        date: "2026-04-08", // Dia 12
+        dayDescription: "Mais de Bath, com um toque de Jane Austen.",
+        attractions: [
+          "Royal Crescent e The Circus.",
+          "Jane Austen Centre.",
+          "Mercado local ou compras."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Cafeterias charmosas ou mercado local.",
+          "Jantar: Refeição rápida em um dos muitos restaurantes do centro."
+        ]
+      },
+      {
+        city: "Bristol",
+        date: "2026-04-09", // Dia 13
+        dayDescription: "Arte de rua e charme portuário em Bristol.",
+        attractions: [
+          "Deslocamento de trem para Bristol.",
+          "Street art tour (obras de Banksy e outros).",
+          "Ponte Suspensa de Clifton (vista panorâmica).",
+          "Área do porto (Harbourside)."
+        ],
+        events: ["Mercados de fim de semana na Harbourside (verificar datas)."],
+        economicalMeals: [
+          "Almoço: St Nicholas Market (comida de rua variada e barata).",
+          "Jantar: Pubs descolados em Stokes Croft ou Harbourside."
+        ]
+      },
+      {
+        city: "Cardiff",
+        date: "2026-04-10", // Dia 14
+        dayDescription: "Castelo e cultura galesa em Cardiff.",
+        attractions: [
+          "Deslocamento de trem para Cardiff.",
+          "Castelo de Cardiff.",
+          "Parque Bute.",
+          "National Museum Cardiff (entrada gratuita)."
+        ],
+        events: ["Pode haver apresentações de música galesa em pubs."],
+        economicalMeals: [
+          "Almoço: Mercado central de Cardiff ou cafeterias.",
+          "Jantar: Restaurantes no centro ou na Cardiff Bay."
+        ]
+      },
+      {
+        city: "Dublin",
+        date: "2026-04-11", // Dia 15
+        dayDescription: "Chegada em Dublin e vida noturna.",
+        attractions: [
+          "Voo para Dublin (do aeroporto para o centro).",
+          "Passeio pela área de Temple Bar.",
+          "Trinity College (exterior e Book of Kells - opcional)."
+        ],
+        events: ["Música ao vivo em quase todos os pubs de Temple Bar e arredores."],
+        economicalMeals: [
+          "Almoço: Opções de sanduíches ou saladas.",
+          "Jantar: Pub grub em Temple Bar (pode ser um pouco mais caro, mas autêntico) ou restaurantes mais afastados."
+        ]
+      },
+      {
+        city: "Dublin",
+        date: "2026-04-12", // Dia 16
+        dayDescription: "Parques e museus em Dublin.",
+        attractions: [
+          "Phoenix Park (alugar bicicleta para ver os veados).",
+          "National Museum of Ireland – Archaeology (entrada gratuita)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Piquenique no Phoenix Park ou lanche rápido.",
+          "Jantar: Restaurante com opções de 'early bird menu' (menus mais baratos no início da noite)."
+        ]
+      },
+      {
+        city: "Dublin",
+        date: "2026-04-13", // Dia 17
+        dayDescription: "Cerveja e rio em Dublin.",
+        attractions: [
+          "Passeio ao longo do rio Liffey.",
+          "Guinness Storehouse (visita à fábrica e degustação).",
+          "Grafias no Ha'penny Bridge."
+        ],
+        events: ["Nenhum evento específico na fábrica, mas uma experiência imersiva."],
+        economicalMeals: [
+          "Almoço: Refeição na Guinness Storehouse (pode ser caro) ou almoço rápido na área.",
+          "Jantar: Fish and chips ou opções baratas em Parnell Street."
+        ]
+      },
+      {
+        city: "Liverpool",
+        date: "2026-04-14", // Dia 18
+        dayDescription: "Chegada em Liverpool, a cidade dos Beatles.",
+        attractions: [
+          "Voo para Liverpool (do aeroporto para o centro).",
+          "The Beatles Story no Albert Dock.",
+          "Passeio pelo Albert Dock e Royal Liver Building.",
+        ],
+        events: ["Música ao vivo no Cavern Club (noite)."],
+        economicalMeals: [
+          "Almoço: Opções variadas no Albert Dock.",
+          "Jantar: Pubs no centro com 'pub grub' tradicional."
+        ]
+      },
+      {
+        city: "Liverpool",
+        date: "2026-04-15", // Dia 19
+        dayDescription: "Cultura e arquitetura em Liverpool.",
+        attractions: [
+          "Catedral de Liverpool (Anglicana e Metropolitana).",
+          "Museu de Liverpool (entrada gratuita).",
+          "Compras ou passeio pelo centro."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Mercado de comida (Bold Street) ou cafés.",
+          "Jantar: Restaurantes informais ou take-aways."
+        ]
+      },
+      {
+        city: "Manchester",
+        date: "2026-04-16", // Dia 20
+        dayDescription: "Chegada em Manchester e futebol.",
+        attractions: [
+          "Deslocamento de trem para Manchester.",
+          "National Football Museum (se houver interesse em futebol).",
+          "Explorar o Northern Quarter (arte de rua, lojas independentes)."
+        ],
+        events: ["Música ao vivo em bares do Northern Quarter."],
+        economicalMeals: [
+          "Almoço: Comida de rua no Arndale Market ou cafés.",
+          "Jantar: Curry Mile (restaurantes indianos baratos) ou pubs."
+        ]
+      },
+      {
+        city: "Manchester",
+        date: "2026-04-17", // Dia 21
+        dayDescription: "Cultura e tranquilidade em Manchester.",
+        attractions: [
+          "Biblioteca John Rylands (arquitetura gótica).",
+          "Manchester Art Gallery (entrada gratuita).",
+          "Passeio pelo Heaton Park (um dos maiores parques da Europa)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Opções vegetarianas ou veganas no Northern Quarter.",
+          "Jantar: Refeição rápida em Piccadilly Gardens."
+        ]
+      },
+      {
+        city: "Manchester",
+        date: "2026-04-18", // Dia 22
+        dayDescription: "Ciência e lazer em Manchester.",
+        attractions: [
+          "Science and Industry Museum (entrada gratuita).",
+          "Compras na Arndale Centre ou St. Ann's Square."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Food courts ou Pret A Manger.",
+          "Jantar: Pubs tradicionais como 'The Peveril of the Peak'."
+        ]
+      },
+      {
+        city: "Manchester",
+        date: "2026-04-19", // Dia 23
+        dayDescription: "Dia livre em Manchester.",
+        attractions: [
+          "Dia livre para explorar a cidade no seu ritmo, revisitar lugares favoritos ou fazer compras."
+        ],
+        events: ["Verificar programações locais para o dia."],
+        economicalMeals: [
+          "Almoço e Jantar: Experimentar diferentes opções de comida de rua ou pubs."
+        ]
+      },
+      {
+        city: "Lake District",
+        date: "2026-04-20", // Dia 24
+        dayDescription: "Chegada ao Lake District, natureza e paisagens.",
+        attractions: [
+          "Deslocamento de trem para Windermere (entrada do Lake District).",
+          "Passeio de barco no Lake Windermere.",
+          "Caminhada leve em Bowness-on-Windermere."
+        ],
+        events: ["Nenhum evento específico, focar na paisagem."],
+        economicalMeals: [
+          "Almoço: Sanduíches e lanches levados para piquenique.",
+          "Jantar: Pub rural com comida caseira."
+        ]
+      },
+      {
+        city: "Lake District",
+        date: "2026-04-21", // Dia 25
+        dayDescription: "Mais do Lake District, trilhas e vilas.",
+        attractions: [
+          "Visita a Ambleside e suas cachoeiras.",
+          "Trilhas em Keswick ou Grasmere.",
+          "Vistas panorâmicas de mirantes."
+        ],
+        events: ["Nenhum evento específico, focar na natureza."],
+        economicalMeals: [
+          "Almoço: Cafeterias nas vilas ou piquenique.",
+          "Jantar: Pub tradicional com lareira."
+        ]
+      },
+      {
+        city: "Glasgow",
+        date: "2026-04-22", // Dia 26
+        dayDescription: "Chegada em Glasgow, arte e design.",
+        attractions: [
+          "Deslocamento de trem para Glasgow.",
+          "Galeria de Arte Moderna (GoMA).",
+          "Passeio pela George Square.",
+          "Catedral de Glasgow."
+        ],
+        events: ["Pode haver exposições de arte ou música ao vivo."],
+        economicalMeals: [
+          "Almoço: Opções rápidas no centro da cidade.",
+          "Jantar: Pubs no West End com comida boa e barata."
+        ]
+      },
+      {
+        city: "Edinburgh",
+        date: "2026-04-23", // Dia 27
+        dayDescription: "Chegada em Edimburgo, castelo e Royal Mile.",
+        attractions: [
+          "Deslocamento de trem para Edimburgo.",
+          "Castelo de Edimburgo (visita interna ou externa).",
+          "Royal Mile (caminhada, lojas de souvenir).",
+          "St Giles' Cathedral."
+        ],
+        events: ["Pode haver shows de rua na Royal Mile."],
+        economicalMeals: [
+          "Almoço: Cafeterias na Royal Mile ou Grassmarket.",
+          "Jantar: Pub escocês tradicional como 'The World's End'."
+        ]
+      },
+      {
+        city: "Edinburgh",
+        date: "2026-04-24", // Dia 28
+        dayDescription: "Highlands e Lago Ness (bate-volta).",
+        attractions: [
+          "Tour de dia inteiro para as Terras Altas e Lago Ness (geralmente inclui paradas em pontos cênicos)."
+        ],
+        events: ["Nenhum evento específico, focar na paisagem do tour."],
+        economicalMeals: [
+          "Almoço: Lanche ou refeição rápida durante o tour.",
+          "Jantar: Retorno a Edimburgo, jantar em restaurante casual."
+        ]
+      },
+      {
+        city: "Edinburgh",
+        date: "2026-04-25", // Dia 29
+        dayDescription: "Stirling e mais de Edimburgo.",
+        attractions: [
+          "Viagem de trem para Stirling (Castelo de Stirling, Monumento a Wallace).",
+          "Retorno a Edimburgo, explorar Calton Hill (vistas panorâmicas).",
+          "National Museum of Scotland (entrada gratuita)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Opções em Stirling ou lanche.",
+          "Jantar: Restaurantes em Leith ou Old Town."
+        ]
+      },
+      {
+        city: "Newcastle",
+        date: "2026-04-26", // Dia 30
+        dayDescription: "Deslocamento para Newcastle.",
+        attractions: [
+          "Deslocamento de trem para Newcastle.",
+          "Ponte do Milênio (Millennium Bridge).",
+          "Caminhada pela orla do rio Tyne."
+        ],
+        events: ["Pode haver mercados de fim de semana na orla."],
+        economicalMeals: [
+          "Almoço: Quayside Market (se for fim de semana) ou opções no centro.",
+          "Jantar: Pubs no centro ou em Ouseburn."
+        ]
+      },
+      {
+        city: "Newcastle",
+        date: "2026-04-27", // Dia 31
+        dayDescription: "Explorando Newcastle.",
+        attractions: [
+          "Castelo de Newcastle.",
+          "Grainger Market.",
+          "St James' Park (exterior, se for fã de futebol)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Mercado ou cafés.",
+          "Jantar: Restaurantes informais ou take-aways."
+        ]
+      },
+      {
+        city: "York",
+        date: "2026-04-28", // Dia 32
+        dayDescription: "Chegada em York, cidade medieval.",
+        attractions: [
+          "Deslocamento de trem para York.",
+          "Caminhada pelas Muralhas Medievais de York.",
+          "York Minster (visita à catedral)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Cafeterias charmosas ou mercado.",
+          "Jantar: Pub vitoriano ou restaurantes nas Shambles."
+        ]
+      },
+      {
+        city: "York",
+        date: "2026-04-29", // Dia 33
+        dayDescription: "Mais de York, vikings e história.",
+        attractions: [
+          "The Shambles (rua histórica).",
+          "Jorvik Viking Centre.",
+          "National Railway Museum (entrada gratuita)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Mercado de Shambles ou opções rápidas.",
+          "Jantar: Restaurantes informais ou take-aways."
+        ]
+      },
+      {
+        city: "London",
+        date: "2026-04-30", // Dia 34
+        dayDescription: "Retorno a Londres, últimas compras.",
+        attractions: [
+          "Deslocamento de trem para Londres.",
+          "Compras na Oxford Street ou Regent Street.",
+          "Passeio final por Covent Garden ou Trafalgar Square."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Food courts ou Pret A Manger.",
+          "Jantar: Jantar de despedida em um restaurante de sua preferência."
+        ]
+      },
+      {
+        city: "London",
+        date: "2026-05-01", // Dia 35
+        dayDescription: "Último dia em Londres.",
+        attractions: [
+          "Tate Modern (galeria de arte moderna, entrada gratuita).",
+          "Passeio pelo Regent's Park (Queen Mary's Rose Garden).",
+          "Preparativos para o retorno (organizar malas)."
+        ],
+        events: ["Nenhum evento específico."],
+        economicalMeals: [
+          "Almoço: Lanche rápido ou almoço em um café.",
+          "Jantar: Escolha um restaurante favorito ou algo prático antes de viajar."
+        ]
+      },
+      {
+        city: "London", // Dia de Volta
+        date: "2026-05-02",
+        dayDescription: "Dia do voo de retorno.",
+        attractions: ["Check-out do hotel e deslocamento ao aeroporto."],
+        events: ["Embarque no aeroporto para São Paulo."],
+        economicalMeals: ["Refeições no aeroporto antes do voo."]
+      },
+      {
+        city: "São Paulo", // Chegada
+        date: "2026-05-03",
+        dayDescription: "Chegada em São Paulo.",
+        attractions: ["Chegada ao aeroporto e retorno para casa."],
+        events: ["Nenhum evento específico."],
+        economicalMeals: ["Refeição em casa."]
+      }
+    ];
+
+    const itineraryContainer = document.getElementById('itinerario-detalhado-container');
+    let htmlContent = '';
+
+    // Mapear rawItineraryData para adicionar informações que o script usa, como o número do dia
+    const processedItineraryData = rawItineraryData.map(record => {
+        const [contagem, diaRaw, passar_o_dia, dormir] = record;
+        const dateObj = new Date(diaRaw);
+        const formattedDate = dateObj.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+        let dayNumber = contagem;
+        if (contagem === "Ida") dayNumber = "Dia da Ida";
+        if (contagem === "volta") dayNumber = "Dia da Volta";
+        if (contagem === "" && dormir.trim() === "Sâo Paulo") dayNumber = "Chegada";
+
+        let dayDescription = "";
+        if (contagem === "Ida") {
+            dayDescription = `Partida de ${passar_o_dia}.`;
+        } else if (contagem === "volta") {
+            dayDescription = `Voo de ${passar_o_dia}.`;
+        } else if (contagem === "" && dormir.trim() === "Sâo Paulo") {
+             dayDescription = `Chegada em ${dormir}.`;
+        } else {
+            dayDescription = `Dia em ${passar_o_dia}. Pernoite em ${dormir}.`;
+            if (passar_o_dia.includes("(bate-volta)") || passar_o_dia.includes("Bate-volta")) {
+                dayDescription = `${passar_o_dia} (Pernoite em ${dormir}).`;
+            } else if (passar_o_dia.trim() === dormir.trim()) {
+                dayDescription = `Dia livre e pernoite em ${dormir}.`;
+            }
+        }
+        
+        return {
+            date: dateObj.toISOString().split('T')[0], // YYYY-MM-DD
+            formattedDate: formattedDate,
+            dayNumber: dayNumber,
+            city: passar_o_dia.split(" (bate-volta)")[0].trim().split(" (bate-volta)")[0].split(" + Lago Ness")[0].split(" ").filter(word => word !== "Bate-volta").join(" ").trim(), // Tenta extrair a cidade principal
+            descriptionSummary: dayDescription // Um resumo simples do que o dia representa
+        };
+    }).filter(day => day.dayNumber !== ""); // Remove a última linha vazia da planilha
+
+    // Itera pelos dias processados para buscar os detalhes
+    processedItineraryData.forEach(day => {
+        // Encontra os detalhes correspondentes no array de detalhes (você preencherá isso)
+        const detailsForDay = itineraryDetails.find(detail => detail.date === day.date) || {
+            attractions: ["Nenhum ponto turístico detalhado."],
+            events: ["Nenhum evento detalhado."],
+            economicalMeals: ["Nenhuma refeição econômica detalhada."]
+        };
+
+        htmlContent += `
+            <div class="dia-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    ${day.formattedDate} – ${day.dayNumber}: ${day.city}
+                </h2>
+                <p><em>${day.descriptionSummary}</em></p>
+                
+                <h3>📍 Pontos Turísticos</h3>
+                <ul>
+                    ${detailsForDay.attractions.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+
+                <h3>🎉 Eventos</h3>
+                <ul>
+                    ${detailsForDay.events.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+
+                <h3>🍽️ Refeições Econômicas</h3>
+                <ul>
+                    ${detailsForDay.economicalMeals.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+    });
+
+    itineraryContainer.innerHTML = htmlContent;
+  </script>
 
 </body>
-
 </html>
-
-
-
