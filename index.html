@@ -48,32 +48,54 @@
     }).addTo(map);
 
     const cidades = {
-      London: [51.5074, -0.1278],
-      Brighton: [50.8225, -0.1372],
-      SevenSisters: [50.7670, 0.0036],
-      Eastbourne: [50.7680, 0.2905],
-      Portsmouth: [50.8017, -1.0970],
-      Southampton: [50.9097, -1.4043],
-      Salisbury: [51.0688, -1.7945],
-      Bath: [51.3758, -2.3599],
-      Bristol: [51.4545, -2.5879],
-      Cardiff: [51.4816, -3.1791],
-      Dublin: [53.3498, -6.2603],
-      Liverpool: [53.4084, -2.9916],
-      Manchester: [53.4808, -2.2426],
-      LakeDistrict: [54.3760, -2.9035],
-      York: [53.9590, -1.0815],
-      Edinburgh: [55.9533, -3.1883],
-      Glasgow: [55.8642, -4.2518],
-      Newcastle: [54.9784, -1.6174]
+London: [515074,-0.1278],
+Brighton: [508225,-0.1372],
+Seven: [507670,0.0036],
+Salisbury: [510688,-17945],
+Stonehenge: [511788,-18263],
+Bath: [513758,-23599],
+Cardiff: [514816,-31791],
+Belfast: [545968,-59254],
+Dublin: [533498,-62603],
+Galway: [532719,-90489],
+Liverpool: [534084,-29916],
+Manchester: [534808,-22426],
+Lake District: [543760,-29035],
+Glasgow: [558642,-42518],
+Stirling: [561165,-39369],
+Edinburgh: [559533,-31883],
+Highlands: [573000,-44500],
+Newcastle: [549784,-16174],
+York: [539590,-10815],
+Cotswolds: [518000,-20330]
+
+
 
     };
 
     const rota = [
-      "London", "Brighton", "SevenSisters", "Portsmouth",
-      "Southampton", "Salisbury", "Bath", "Bristol", "Cardiff",
-      "Dublin", "Liverpool", "Manchester", "LakeDistrict",  "Glasgow",
-      "Edinburgh", "Newcastle", "York","London"
+     "London",
+"Brighton",
+"Seven",
+"Salisbury",
+"Stonehenge",
+"Bath",
+"Cardiff",
+"Belfast",
+"Dublin",
+"Galway",
+"Liverpool",
+"Manchester",
+"Lake District",
+"Glasgow",
+"Stirling ",
+"Edinburgh",
+"Highlands",
+"Newcastle",
+"York",
+"Cotswolds",
+"London",
+
     ];
 
     for (const [nome, coords] of Object.entries(cidades)) {
@@ -172,5 +194,6 @@
   </script>
 
 </body>
+
 
 </html>
